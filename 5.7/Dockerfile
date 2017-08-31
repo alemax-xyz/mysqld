@@ -42,6 +42,7 @@ RUN rm -rf \
         usr/share/gdb \
         usr/share/lintian \
         usr/share/man \
+        usr/share/mysql/docs \
         usr/share/mysql/*.sql \
         usr/share/mysql/*.txt \
         usr/share/mysql/echo_stderr \
