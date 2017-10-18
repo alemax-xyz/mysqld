@@ -13,7 +13,7 @@ else
     test $(id -g "$PUSER") -eq $PGID || usermod --gid $PGID "$PUSER" || exit 2
 fi
 
-chown $PUID:$PGID -R /var/lib/mysql /var/lib/mysql-files /var/run/mysqld || exit 2
+chown $PUID:$PGID /var/lib/mysql /var/lib/mysql-files /var/run/mysqld || exit 2
 
 test -f /var/lib/mysql/auto.cnf || mysqld --user="$PUSER" --initialize-insecure --init-file=/usr/share/mysql/init.sql
 
