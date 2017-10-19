@@ -17,6 +17,6 @@ fi
 
 chown $PUID:$PGID /var/lib/mysql /var/lib/mysql-files /var/run/mysqld || exit 2
 
-test -f /var/lib/mysql/auto.cnf || mysqld --user="$PUSER" --initialize-insecure --init-file=/usr/share/mysql/init.sql
+test -f /var/lib/mysql/auto.cnf || mysqld --user="$PUSER" --initialize --init-file=/usr/share/mysql/init.sql
 
 mysqld --user="$PUSER"

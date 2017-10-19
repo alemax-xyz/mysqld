@@ -66,10 +66,11 @@ RUN rm -rf \
         var/run/mysqld \
         var/lib/mysql \
         var/lib/mysql-files \
- && chmod 0770 var/lib/mysql-files \
- && echo "!includedir /etc/mysql/conf.d/" > etc/mysql/my.cnf
+ && chmod 0770 var/lib/mysql-files
 
 COPY --from=base /etc/group /etc/gshadow /etc/passwd /etc/shadow etc/
+COPY my.cnf etc/mysql/
+COPY conf.d/ etc/mysql/conf.d/
 COPY init.sh etc/
 COPY init.sql usr/share/mysql/
 

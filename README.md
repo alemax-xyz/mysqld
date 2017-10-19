@@ -2,12 +2,12 @@
 MySQL is a widely used, open-source relational database management system (RDBMS).
 
 This image is based on official mysql server packages for Ubuntu Xenial and is built on top of [clover/common](https://hub.docker.com/r/clover/common/).
-It contains `mysqld` only. Consider using [clover/mysql](https://hub.docker.com/r/clover/mysql/) for administration and database upgrades.
+It contains `mysqld` only. Consider using [clover/mysql](https://hub.docker.com/r/clover/mysql/) for administration purposes and database upgrades.
 
 ### Data volumes
 | Location | Description |
 |---|---|
-| `/var/lib/mysql` | MySQL data directory, will be initialized with `/usr/share/mysql/init.sql` on the first run with no password set to `root` user |
+| `/var/lib/mysql` | MySQL data directory, will be initialized with `/usr/share/mysql/init.sql` on the first, `root` password will be generated |
 
 ### Exposed ports
 | Port | Description |
@@ -17,12 +17,12 @@ It contains `mysqld` only. Consider using [clover/mysql](https://hub.docker.com/
 ### Enviroment variables
 | Name | Default value | Description |
 |---|---|---|
-| `PUID` | `50` | Desired _UID_ of the process owner _**_ |
-| `PGID` | primary group id of the _UID_ user (`50`) | Desired _GID_ of the process owner _**_ |
+| `PUID` | `50` | Desired _UID_ of the process owner _*_ |
+| `PGID` | primary group id of the _UID_ user (`50`) | Desired _GID_ of the process owner _*_ |
 
-_**_ `PUID`/`PGID` could be used to preserve data volume ownership on host.
+_*_ `PUID`/`PGID` could be used to preserve data volume ownership on host.
 
 ### Configuration files
 | Location | Description |
 |---|---|
-| `/etc/mysql/conf.d` | _mysql_ configuration directory, all files within will be included by `/etc/mysql/my.cnf` |
+| `/etc/mysql/conf.d/` | _mysql_ configuration directory, all files within will be included by `/etc/mysql/my.cnf` |
