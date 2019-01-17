@@ -1,7 +1,7 @@
 ## Mysqld docker image
 MySQL is a widely used, open-source relational database management system (RDBMS).
 
-This image is based on official mysql server packages for Ubuntu Xenial and is built on top of [clover/common](https://hub.docker.com/r/clover/common/).
+This image is based on official mysql server packages for Ubuntu Bionic and is built on top of [clover/common](https://hub.docker.com/r/clover/common/).
 It contains `mysqld` only. Consider using [clover/mysql](https://hub.docker.com/r/clover/mysql/) for administration purposes and database upgrades.
 
 ### Data volumes
