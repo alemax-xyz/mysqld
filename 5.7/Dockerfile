@@ -70,7 +70,7 @@ RUN rm -rf \
 COPY --from=base /etc/group /etc/gshadow /etc/passwd /etc/shadow etc/
 COPY my.cnf etc/mysql/
 COPY conf.d/ etc/mysql/conf.d/
-COPY init.sh etc/
+COPY init/ etc/init/
 COPY init.sql usr/share/mysql/
 
 WORKDIR /
@@ -83,7 +83,5 @@ ENV LANG=C.UTF-8
 COPY --from=build /rootfs /
 
 VOLUME ["/var/lib/mysql"]
-
-CMD ["sh", "/etc/init.sh"]
 
 EXPOSE 3306
