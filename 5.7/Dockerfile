@@ -62,7 +62,7 @@ RUN rm -rf \
         var/lib/mysql-upgrade \
  && mkdir -p \
         etc/mysql/conf.d \
-        var/run/mysqld \
+        run/mysqld \
         var/lib/mysql \
         var/lib/mysql-files \
  && chmod 0770 var/lib/mysql-files
