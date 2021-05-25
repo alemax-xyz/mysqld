@@ -13,7 +13,7 @@ RUN groupadd \
         --gid 50 \
         mysql
 
-FROM library/ubuntu:bionic AS build
+FROM library/ubuntu:focal AS build
 
 ENV LANG=C.UTF-8
 
@@ -32,8 +32,10 @@ RUN apt-get download \
         libnuma1 \
         libstdc++6 \
         libwrap0 \
-        mysql-server-5.7 \
-        mysql-server-core-5.7
+        libevent-core-2.1-7 \
+        libevent-pthreads-2.1-7 \
+        mysql-server-8.0 \
+        mysql-server-core-8.0
 RUN find *.deb | xargs -I % dpkg-deb -x % /rootfs
 
 WORKDIR /rootfs
@@ -48,7 +50,7 @@ RUN rm -rf \
         usr/bin \
         usr/share/apport \
         usr/share/doc \
-        usr/share/gcc-5 \
+        usr/share/gcc-* \
         usr/share/gdb \
         usr/share/lintian \
         usr/share/man \
